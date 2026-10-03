@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="src/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Infinity Frames</title>
+  </head>
+  <body>
+    <h1>Infinity Frames</h1>
+    <h2>無限のフレームで動画生成!</h2>
+    <p>1枚1枚、エディタで編集し、つなぎ合わせて、動画を作成しましょう!1つ1つの作品が、1つの大きな作品になります!</p>
+    <h2>設定</h2>
+    <label>出力タイプ：<select id="outputType">
+      <option value="mp4">MP4</option>
+      <option value="webm">WebM</option>
+      <option value="gif">GIF</option>
+    </select></label><br>
+    <label>画像の出力タイプ：<select id="imageOutputType">
+      <option value="png">PNG</option>
+      <option value="jpg">JPG</option>
+      <option value="webp">WebP</option>
+    </select></label><br>
+    <label>フレームレート：<input id="framelate" type="number" value="30" min="1" max="60" /></label><br>
+    <label>画像のXサイズ：<input id="xSize" list="xSizes" value="800" /><datalist id="xSizes">
+      <option>480</option>
+      <option>640</option>
+      <option>800</option>
+      <option>1024</option>
+      <option>1280</option>
+      <option>1920</option>
+    </datalist></label><br>
+    <label>画像のYサイズ：<input id="ySize" list="ySizes" value="600" /><datalist id="ySizes">
+      <option>360</option>
+      <option>480</option>
+      <option>600</option>
+      <option>768</option>
+      <option>1080</option>
+    </datalist></label>
+    <label>動画の音声：<input type="file" id="audioFile" accept="audio/*" /></label>
+    <h2>エディタ</h2>
+    <canvas id="editorCanvas" width="800" height="600"></canvas><br>
+    <button id="prevFrame">前のフレーム</button>
+    <button id="nextFrame">次のフレーム</button>
+    <button id="addFrame">フレーム追加</button>
+    <button id="deleteFrame">フレーム削除</button>
+    <button id="clearFrame">フレームをクリア</button>
+    <button id="saveFrame">フレームをセーブ</button>
+    <button id="exportFrames">フレームをエクスポート</button>
+    <label>フレーム数: <span id="frameCount">1 / 1</span></label><br>
+    <button id="penTool">ペン</button>
+    <button id="eraserTool">消しゴム</button>
+    <input type="color" id="colorPicker" value="#000000" />
+    <input type="range" id="brushSize" min="1" max="50" value="5" /><br>
+    <button id="previewPlay">プレビュー再生</button>
+    <button id="previewPause">プレビュー停止</button>
+    <audio id="previewAudio"></audio>
+    <h2>動画生成</h2>
+    <button id="generateVideo">動画生成</button>
+    <script src="src/allloader.js" type="module"></script>
+    </body>
+</html>
