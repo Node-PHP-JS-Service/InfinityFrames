@@ -1,4 +1,11 @@
 canvas {
     border: 1px solid black;
+    touch-action: none;
 }
 
+button {
+    border-radius: 20px;
+    height: 30px;
+    width: auto;
+    margin:2px;
+}
